@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha</title>
+
+    <style>
+        body{
+            background-color:blueviolet;
+        }
+
+        .painel{
+            margin: auto;
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            border-radius: 20px;
+            text-align: center;
+            padding-top: 50px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #sim{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: red;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+        }
+        #nao{
+            height: 40px;
+            width:60px;
+            background-color: lime;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: 90px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="painel">
+        <h1>Convite</h1>
+        <h3>Bora Rolê?</h3>
+
+        
+        <button onmouseover="fuja()" id="sim"> Sim! </button>
+        <button id="nao" onclick="Perfeito()"> Não! </button> 
+
+        <img src="https://i.pinimg.com/originals/7b/d6/91/7bd6916843cc7517dfc7f8a41b3d044e.gif" alt="">
+
+    </div>
+
+    <script>
+        function fuja(){
+            var botaoSim = document.getElementById("sim")
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+            var maxX = larguraJanela - botaoSim.offsetWidth;
+            var maxY = alturaJanela - botaoSim.offsetHeight;
+
+            var aleatorioX = Math.floor(Math.random() * maxX);
+            var aleatorioY = Math.floor(Math.random() * maxY);
+
+            botaoSim.style.left = aleatorioX + "px";
+            botaoSim.style.top = aleatorioY + "px";
+
+
+
+        }
+
+        function Perfeito(){
+            alert("Que coincidência, eu também queria essa!♥")
+        }
+    </script>
+
+</body>
+</html>
